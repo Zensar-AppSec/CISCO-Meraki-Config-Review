@@ -15,7 +15,7 @@ BENCHMARKS = {
             for a in data if isinstance(a, dict)
         ]
     },
-    "alerts_LondonFirewall.json": {
+    "alerts_<location>Firewall.json": {
         "endpoint": "/networks/<networkId>/alerts/settings",
         "checks": lambda data: [
             ("✅ Alert '{}' is enabled.".format(alert.get('alertType', 'unknown')), "")
@@ -24,7 +24,7 @@ BENCHMARKS = {
             for alert in data.get("alerts", []) if isinstance(alert, dict)
         ]
     },
-    "content_filtering_London.json": {
+    "content_filtering_<location>.json": {
         "endpoint": "/networks/<networkId>/contentFiltering",
         "checks": lambda data: [
             ("✅ Malware category is blocked.", "")
@@ -32,7 +32,7 @@ BENCHMARKS = {
             ("❌ Malware category not blocked.", "Enable content filtering for Malware.")
         ]
     },
-    "devices_London.json": {
+    "devices_<location>.json": {
         "endpoint": "/networks/<networkId>/devices",
         "checks": lambda data: [
             ("✅ Device '{}' has a name.".format(dev.get('serial', 'unknown')), "")
@@ -41,7 +41,7 @@ BENCHMARKS = {
             for dev in data if isinstance(dev, dict)
         ]
     },
-    "firewall_London.json": {
+    "firewall_<location>.json": {
         "endpoint": "/networks/<networkId>/appliance/firewall/l3FirewallRules",
         "checks": lambda data: [
             ("❌ Insecure Allow All rule: '{}'".format(rule.get('comment', '')), "Avoid allow any-any.")
@@ -50,7 +50,7 @@ BENCHMARKS = {
             for rule in data if isinstance(rule, dict)
         ]
     },
-    "intrusion_settings_London.json": {
+    "intrusion_settings_<location>.json": {
         "endpoint": "/networks/<networkId>/appliance/security/intrusionSettings",
         "checks": lambda data: [
             ("✅ IDS/IPS is enabled in '{}' mode.".format(data.get("mode", "unknown")), "")
@@ -58,7 +58,7 @@ BENCHMARKS = {
             ("❌ IDS/IPS is not in prevention mode.", "Set mode to 'prevention'.")
         ]
     },
-    "l7_firewall_London.json": {
+    "l7_firewall_<location>.json": {
         "endpoint": "/networks/<networkId>/appliance/firewall/l7FirewallRules",
         "checks": lambda data: [
             ("✅ L7 Rule blocks category: '{}'".format(rule.get('category', 'unknown')), "")
@@ -67,7 +67,7 @@ BENCHMARKS = {
             for rule in data if isinstance(rule, dict)
         ]
     },
-    "ssids_London.json": {
+    "ssids_<location>.json": {
         "endpoint": "/networks/<networkId>/wireless/ssids",
         "checks": lambda data: [
             ("✅ SSID '{}' uses authentication.".format(ssid.get('name', 'unknown')), "")
@@ -76,7 +76,7 @@ BENCHMARKS = {
             for ssid in data if isinstance(ssid, dict)
         ]
     },
-    "switchports_Q2MW-NXTR-6FUX.json": {
+    "switchports_<device_id>.json": {
         "endpoint": "/devices/<serial>/switchPorts",
         "checks": lambda data: [
             ("✅ Port {} is access mode.".format(port.get('portId', 'unknown')), "")
@@ -85,13 +85,13 @@ BENCHMARKS = {
             for port in data if isinstance(port, dict)
         ]
     },
-    "vlan_settings_LondonFirewall.json": {
+    "vlan_settings_<location>Firewall.json": {
         "endpoint": "/networks/<networkId>/appliance/vlans/settings",
         "checks": lambda data: [
             ("✅ VLANs enabled: {}.".format(data.get("vlansEnabled", False)), "")
         ]
     },
-    "vlans_LondonFirewall.json": {
+    "vlans_<location>Firewall.json": {
         "endpoint": "/networks/<networkId>/vlans",
         "checks": lambda data: [
             ("✅ VLAN '{}' has subnet.".format(v.get('name', 'unknown')), "")
@@ -100,7 +100,7 @@ BENCHMARKS = {
             for v in data if isinstance(v, dict)
         ]
     },
-    "vpn_London.json": {
+    "vpn_<location>.json": {
         "endpoint": "/networks/<networkId>/siteToSiteVpn",
         "checks": lambda data: [
             ("✅ VPN mode is '{}'".format(data.get("mode", "unknown")), "")
