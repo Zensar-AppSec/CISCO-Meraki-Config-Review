@@ -4,13 +4,13 @@ from datetime import datetime
 
 # Define paths to local JSON files
 data_files = {
-    "admins": "admins_Org.json",
-    "alerts": "alerts_LondonFirewall.json",
-    "content_filtering": "content_filtering_London.json",
-    "devices": "devices_London.json",
-    "firewall": "firewall_London.json",
-    "ssids": "ssids_London.json",
-    "vpn": "vpn_London.json"
+    "admins": "",
+    "alerts": "",
+    "content_filtering": "",
+    "devices": "",
+    "firewall": "",
+    "ssids": "",
+    "vpn": ""
 }
 
 def load_json(path):
